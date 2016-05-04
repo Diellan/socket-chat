@@ -1,0 +1,186 @@
+html, body {
+	height: 100%;
+	min-width: 500px;
+}
+
+body {
+	position: relative;
+}
+
+#content {
+	background-color: #E5E5E8;
+	color: #000;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#content>.alert{
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+}
+
+#content h3 {
+	font-size: 1.0em;
+}
+
+#content #onlineListContainer h3, #content #helpContainer h3, #content #settingsContainer h3 {
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 4px;
+	margin: 0px;
+	text-align: center;
+}
+
+@media screen, projection, handheld{
+    #content #onlineListContainer h3, #content #helpContainer h3, #content #settingsContainer h3 {
+        background-color: #88A6C0;
+        color: #FFF;
+    }
+}
+
+#chatList, #roomListContainer, #onlineListContainer, #helpContainer, #settingsContainer, #bbCodeContainer, #colorCodesContainer, #emoticonsContainer {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ADADAD;
+	background-color: #FFF;
+}
+
+#roomListContainer {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 110px;
+	bottom: 100px;
+    margin: 0;
+}
+
+#onlineListContainer {
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	width: 200px;
+	bottom: 100px;
+    margin: 0;
+}
+
+#inputFieldContainer {
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 30px;
+}
+
+#inputFieldContainer #inputField {
+	width: 100%;
+	height: 65px;
+}
+
+#submitButtonContainer {
+	position: absolute;
+	right: 20px;
+	bottom: 0;
+}
+
+#chatList {
+	position: absolute;
+	left: 130px;
+	right: 220px;
+	top: 10px;
+	bottom: 100px;
+	overflow: hidden;
+}
+
+#chatList .roomContents{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.roomContents>div:nth-child(odd) {
+	background: #f9f9f9;
+}
+
+.roomContents .dateTime {
+    font-size: 0.7em;
+}
+
+.roomContents .user {
+    font-weight: bold;
+}
+
+.roomContents .impersonated {
+    font-style: italic;
+}
+
+.roomContents .chatbot .user {
+    font-style: italic;
+    font-color: #476C8E;
+}
+
+.roomContents .chatbot .message {
+    font-style: italic;
+}
+
+#rooms div {
+    position: relative;
+}
+
+#rooms .roomIndicator {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: red;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    cursor: pointer;
+}
+
+#rooms .joined .roomIndicator{
+	background: green;
+}
+
+#rooms .selected {
+    font-weight: bold;
+}
+
+#rooms .roomName {
+    color: blue;
+    cursor: pointer;
+}
+
+#rooms .hasNew .roomName {
+    color: red;
+}
+
+#rooms .selected .roomName {
+    cursor: default;
+}
+
+#controlPanel {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    font-size: 12px;
+}
+
+#controlPanel>.glyphicon {
+    top: 0;
+}
+
+.no-rooms #rooms,
+.no-users #onlineListContainer {
+	display: none;
+}
+
+.no-rooms #chatList {
+	left: 10px;
+}
+
+.no-users #chatList {
+	right: 10px;
+}

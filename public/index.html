@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>5M2M Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <script type="text/javascript" src="/javascripts/rcolor.js"></script>
+    <script type="text/javascript" src="/javascripts/md5-min.js"></script>
+    <script type="text/javascript" src="/javascripts/config.js"></script>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+
+</head>
+<body>
+<div id="content">
+    <div id="roomListContainer" class="panel panel-default">
+        <div class="panel-heading">ROOMS</div>
+        <div id="rooms" class="panel-body"></div>
+    </div>
+    <div id="chatList"></div>
+    <div id="inputFieldContainer">
+        <textarea id="inputField" rows="1" cols="50" maxlength="1040"
+                  title="Press SHIFT+ENTER to input a line break"
+                  data-maxlength-target="messageLengthCounter"></textarea>
+    </div>
+    <div id="submitButtonContainer">
+        Speak as: <input type="text" name="impersonateAs" id="impersonateAs"/>
+        <span id="messageLengthCounter">0/1040</span>
+        <button id="submitButton">Submit</button>
+    </div>
+    <div id="onlineListContainer" class="panel panel-default">
+        <div class="panel-heading">Online users</div>
+        <div id="onlineList" class="panel-body"></div>
+    </div>
+    <div id="controlPanel" class="btn-group btn-group-xs">
+        <button id="autoScrollButton" alt="Autoscroll on/off" title="Autoscroll on/off"
+                class="glyphicon glyphicon-play btn"></button>
+        <button id="settings" class="glyphicon glyphicon-cog btn" data-toggle="modal" data-target="#settingsModal"></button>
+        <button id="toggleAudio" alt="Audio on/off" title="Audio on/off" class="glyphicon glyphicon-volume-off btn"></button>
+        <button id="logout" class="btn">Logout</button>
+    </div>
+</div>
+<div id="modalContainer">
+    <div id="settingsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true" style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="settingsModalLabel">Modal Heading</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="usernameColors" id="settingsUsernameColors" value="on"> Show Randomized Username Colors
+                            </label>
+                        </div>
+                        <div class="form-group">
+	                        <label for="settingsTheme">Theme</label>
+                            <select class="form-control" name="theme" id="settingsTheme">
+                                <option>Default</option>
+                            </select>
+                        </div>
+	                    <div class="checkbox">
+		                    <label>
+			                    <input type="checkbox" name="hideRooms" id="settingsHideRooms" value="on"> Hide Rooms
+		                    </label>
+	                    </div>
+	                    <div class="checkbox">
+		                    <label>
+			                    <input type="checkbox" name="hideUsers" id="settingsHideUsers" value="on"> Hide Users Online
+		                    </label>
+	                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+</body>
+</html>

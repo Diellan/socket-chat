@@ -1,0 +1,11 @@
+#content {
+    background-color:#F9F9F9;
+    color:#28313F;
+}
+
+.roomContents {
+    background-color:#E1EBF2;
+}
+#chatList, #roomListContainer, #onlineListContainer, #helpContainer, #settingsContainer, #bbCodeContainer, #colorCodesContainer, #emoticonsContainer, .roomContents>div:nth-child(odd) {
+    background: #ECF3F7;
+}

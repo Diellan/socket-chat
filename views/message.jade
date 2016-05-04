@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(action="/add_message", method="post")
+    table(border="1")
+      tr
+        td User ID
+        td
+          input(name="message[UserID]", type="textbox")
+      tr
+        td Room ID
+        td
+          input(name="message[RoomID]", type="textbox")
+      tr
+        td Message
+        td
+          input(name="message[Message]", type="textbox")
+      tr
+        td(colspan="2")
+          input(type="submit", value="Record message")
+
+  div
+    h3 Messages
+    table(border="1")
+      tr
+        td Date
+        td UserID
+        td RoomID
+        td Message
+      each message in messages
+        tr
+          td #{message.Time.toDateString()}
+          td #{message.UserID}
+          td #{message.RoomID}
+          td #{message.Message}
